@@ -32,3 +32,11 @@ test("should return the sum of numbers with new line", () => {
 test("should return the sum with a custom delimiter", () => {
 	expect(add("//;\n1;2")).toBe(3);
 });
+
+test("throws an error for negative numbers", () => {
+	expect(() => add("1,-2,3")).toThrow("Negative numbers not allowed -2");
+});
+
+test("throws an error for multiple negative numbers", () => {
+	expect(() => add("1,-2,-3")).toThrow("Negative numbers not allowed -2,-3");
+});

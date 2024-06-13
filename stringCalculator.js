@@ -15,15 +15,23 @@ function add(numbers) {
 	}
 
 	const numArray = numbers.split(regex);
+
+	const negativeNums = numArray.filter((num) => parseInt(num) < 0);
+
+	if (negativeNums.length > 0) {
+		throw new Error(`Negative numbers not allowed ${negativeNums.join(",")}`);
+	}
+
 	return numArray.reduce((sum, num) => sum + parseInt(num), 0);
 }
 
-console.log('Input => "" Output =>', add(""));
-console.log("Input => null Output =>", add(null));
-console.log('Input => "1" Output =>', add("1"));
-console.log('Input => "1,5" Output =>', add("1,5"));
-console.log('Input => "1,3,5,7" Output =>', add("1,3,5,7"));
-console.log('Input => "1\\n2,3,4" Output =>', add("1\n2,3,4"));
-console.log('Input => "//;\\n1;2;3;4" Output =>', add("//;\n1;2;3;4"));
+// console.log('Input => "" Output =>', add(""));
+// console.log("Input => null Output =>", add(null));
+// console.log('Input => "1" Output =>', add("1"));
+// console.log('Input => "1,5" Output =>', add("1,5"));
+// console.log('Input => "1,3,5,7" Output =>', add("1,3,5,7"));
+// console.log('Input => "1\\n2,3,4" Output =>', add("1\n2,3,4"));
+// console.log('Input => "//;\\n1;2;3;4" Output =>', add("//;\n1;2;3;4"));
+// console.log('Input => "1,-2,3,-4,5" Output =>', add("1,-2,3,-4,5"));
 
 module.exports = add;
