@@ -1,0 +1,15 @@
+{
+	"name": "string-calculator",
+	"version": "1.0.0",
+	"main": "stringCalculator.js",
+	"scripts": {
+		"start": "node stringCalculator.js",
+		"test": "jest"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"jest": "^29.7.0"
+	}
+}
