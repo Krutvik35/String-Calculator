@@ -20,3 +20,7 @@ test("should return the sum of two numbers", () => {
 test("should return NaN if string has invalid numbers", () => {
 	expect(add("test")).toBe(NaN);
 });
+
+test("should return the sum of multiple numbers", () => {
+	expect(add("1,2,3,4")).toBe(10);
+});
