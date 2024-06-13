@@ -28,3 +28,7 @@ test("should return the sum of multiple numbers", () => {
 test("should return the sum of numbers with new line", () => {
 	expect(add("1\n2,3")).toBe(6);
 });
+
+test("should return the sum with a custom delimiter", () => {
+	expect(add("//;\n1;2")).toBe(3);
+});
